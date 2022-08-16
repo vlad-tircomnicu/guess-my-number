@@ -18,8 +18,10 @@ let
 check.addEventListener('click', () => {
     let guess = Number( guessInput.value )
 
+    // if no number is submitted
     if (!guess) {
         message.textContent = 'No number'
+    // if the number is incorrect
     } else if (guess > secretNumber || guess < secretNumber) {
         if (liveScore > 1) {
             liveScore--
@@ -32,6 +34,7 @@ check.addEventListener('click', () => {
             message.textContent = 'You lost the game'
             liveScore = 0
         }
+    // if the number is correct
     } else {
         message.textContent = 'Number is correct'
         hiddenNumber.textContent = String(guess)
